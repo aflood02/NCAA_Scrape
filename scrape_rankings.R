@@ -1,4 +1,7 @@
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(purrr)
 library(rvest)
 library(httr)
 library(jsonlite)
