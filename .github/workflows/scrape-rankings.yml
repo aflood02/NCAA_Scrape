@@ -24,12 +24,38 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
-          sudo apt-get install -y chromium-browser chromium-chromedriver
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            libharfbuzz-dev \
+            libfribidi-dev \
+            libfreetype6-dev \
+            libpng-dev \
+            libtiff5-dev \
+            libjpeg-dev \
+            chromium-browser \
+            chromium-chromedriver
+      
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+        shell: Rscript {0}
+
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
       
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("tidyverse", "rvest", "httr", "jsonlite", "chromote", "lubridate"))'
+          Rscript -e 'install.packages("remotes", repos = "https://cloud.r-project.org")'
+          Rscript -e 'remotes::install_cran(c("dplyr", "tidyr", "readr", "purrr", "rvest", "httr", "jsonlite", "chromote", "lubridate"), repos = "https://cloud.r-project.org")'
       
       - name: Run scraping script
         run: Rscript scrape_rankings.R
@@ -40,5 +66,5 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/*.csv
+          git add data/*.csv || echo "No CSV files to add"
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update rankings data - $(date +'%Y-%m-%d %H:%M')" && git push)
