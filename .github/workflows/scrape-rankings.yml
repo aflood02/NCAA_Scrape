@@ -38,24 +38,10 @@ jobs:
             chromium-browser \
             chromium-chromedriver
       
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
-      - name: Cache R packages
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-      
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages("remotes", repos = "https://cloud.r-project.org")'
-          Rscript -e 'remotes::install_cran(c("dplyr", "tidyr", "readr", "purrr", "rvest", "httr", "jsonlite", "chromote", "lubridate"), repos = "https://cloud.r-project.org")'
+          install.packages(c("dplyr", "tidyr", "readr", "purrr", "rvest", "httr", "jsonlite", "chromote", "lubridate"), repos = "https://cloud.r-project.org")
+        shell: Rscript {0}
       
       - name: Run scraping script
         run: Rscript scrape_rankings.R
