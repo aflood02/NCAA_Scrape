@@ -61,12 +61,38 @@ strip_mascot_name <- function(team_name) {
     "Mountain Hawks", "Nittany Lions", "Purple Aces", "Ragin Cajuns",
     "Red Foxes", "River Hawks", "Scarlet Knights", "Sun Devils", "Tar Heels",
     "Thundering Herd", "Yellow Jackets", "Red Storm", "Red Raiders", "Red Wolves",
-    "Aggies", "Aztecs", "Badgers", "Bears", "Bearcats", "Beavers", "Bengals",
-    "Bruins", "Buckeyes", "Bulldogs", "Bulls", "Cardinals", "Cavaliers",
-    "Cougars", "Cowboys", "Cyclones", "Eagles", "Gators", "Hawks", "Hoosiers",
-    "Huskies", "Jayhawks", "Knights", "Lions", "Panthers", "Pirates",
-    "Raiders", "Rams", "Rebels", "Seminoles", "Spartans", "Tigers",
-    "Trojans", "Wildcats", "Wolverines"
+    "Red Flash", "Running Bulldogs", "Wolf Pack", "Big Red", "Black Bears",
+    "Aggies", "Anteaters", "Aztecs", "Badgers", "Beach", "Beacons", "Bearkats",
+    "Bears", "Bearcats", "Beavers", "Bengals", "Billikens", "Bison", "Bisons",
+    "Black", "Blackbirds", "Blazers", "Bluejays", "Bobcats", "Boilermakers",
+    "Bonnies", "Braves", "Broncos", "Bruins", "Buccaneers", "Buckeyes",
+    "Buffaloes", "Bulldogs", "Bulls", "Camels", "Cardinal", "Cardinals",
+    "Catamounts", "Cavaliers", "Chanticleers", "Chargers", "Chippewas", "Clan",
+    "Colonels", "Colonials", "Commodores", "Cornhuskers", "Cougars", "Cowboys",
+    "Coyotes", "Crimson", "Crusaders", "Cyclones", "Deacons", "Demons",
+    "Dolphins", "Dons", "Dragons", "Ducks", "Dukes", "Eagles", "Explorers",
+    "Falcons", "Fighting", "Flames", "Flyers", "Friars", "Gaels", "Gamecocks",
+    "Gators", "Gauchos", "Golden", "Gophers", "Governors", "Greyhounds",
+    "Grizzlies", "Hatters", "Hawks", "Hawkeyes", "Highlanders", "Hilltoppers",
+    "Hokies", "Hornets", "Hoosiers", "Hoyas", "Huskies", "Hurricanes", "Illini",
+    "Islanders", "Jaguars", "Jackrabbits", "Jaspers", "Jayhawks", "Jets",
+    "Johnnies", "Knights", "Lakers", "Lancers", "Leathernecks", "Leopards",
+    "Lions", "Lobos", "Longhorns", "Lopes", "Lumberjacks", "Mastodons",
+    "Matadors", "Mavericks", "Midshipmen", "Miners", "Minutemen", "Mocs",
+    "Monarchs", "Mountain", "Mountaineers", "Musketeers", "Mustangs", "Norse",
+    "Orangemen", "Orange", "Ospreys", "Owls", "Paladins", "Panthers", "Patriots",
+    "Peacocks", "Penguins", "Phoenix", "Pilots", "Pirates", "Pioneers", "Pokes",
+    "Pride", "Privateers", "Purple", "Pythons", "Quakers", "Racers", "Raiders",
+    "Rainbow", "Rams", "Ramblers", "Rattlers", "Ravens", "Razorbacks", "Rebels",
+    "Redhawks", "Redbirds", "Retrievers", "Revolutionaries", "River", "Riverhawks",
+    "Roadrunners", "Rockets", "Roos", "Royals", "Saints", "Salukis", "Scots",
+    "Seahawks", "Seawolves", "Seminoles", "Sharks", "Shockers", "Skyhawks",
+    "Sooners", "Spartans", "Spiders", "Stags", "Sycamores", "Terrapins",
+    "Terriers", "Texans", "Thunderbirds", "Tigers", "Titans", "Tommies",
+    "Toreros", "Trailblazers", "Tribe", "Tritons", "Trojans", "Utes", "Vandals",
+    "Vaqueros", "Vikings", "Violets", "Volunteers", "Vulcans", "Warhawks",
+    "Warriors", "Waves", "Wildcats", "Wolves", "Wolfpack", "Wolverines",
+    "Wonders", "Zips", "49ers"
   )
   
   mascots <- mascots[order(-nchar(mascots))]
@@ -105,9 +131,11 @@ scrape_bpi <- function() {
           message("Clicked Show More button (", i, "/15)")
           Sys.sleep(1.5)
         } else {
+          message("No more data to load (clicked ", i-1, " times)")
           break
         }
       }, error = function(e) {
+        message("Finished clicking Show More after ", i-1, " attempts")
         break
       })
     }
@@ -305,21 +333,21 @@ scrape_barttorvik <- function() {
       mutate(
         torvik_rank = as.integer(gsub("[^0-9]", "", rank_raw)),
         team = team_raw,
-        team = ifelse(
-          grepl("\\s+\\([HAN]\\)\\s+\\d+\\s+", team),
-          gsub("\\s+\\([HAN]\\)\\s+\\d+.*$", "", team),
-          team
-        ),
+        # Remove game corruption
+        team = gsub("\\s+\\([HAN]\\)\\s+\\d+.*$", "", team),
+        team = gsub("\\s*\\([HAN]\\).*$", "", team),
         team = gsub("\\s+\\(won\\)\\s*$", "", team),
         team = gsub("\\s+\\(lost\\)\\s*$", "", team),
-        team = gsub("^Cal Saint\\b", "Cal State", team),
-        team = gsub("\\bKansas Saint$", "Kansas State", team),
-        team = gsub("\\bGeorgia Saint$", "Georgia State", team),
-        team = gsub("\\bOregon Saint$", "Oregon State", team),
+        team = gsub("\\s*\\([^)]*\\)\\s*$", "", team),
         team = gsub("\\s*\\d+$", "", team),
         team = trimws(team),
+        # Apply standard normalization
         team = normalize_bpi_name(team),
         team = strip_mascot_name(team),
+        # Fix State/Saint issues
+        team = gsub("\\s+Saint$", " State", team),
+        team = gsub("Cal Saint", "Cal State", team, fixed = TRUE),
+        # Extract numeric values
         torvik_rating = suppressWarnings(as.numeric(barthag_raw)),
         torvik_adjoe = suppressWarnings(as.numeric(adjoe_raw)),
         torvik_adjde = suppressWarnings(as.numeric(adjde_raw))
@@ -331,8 +359,7 @@ scrape_barttorvik <- function() {
         !is.na(team),
         !team %in% c("Team", "TEAM", "Rk", "D-I Avg:"),
         nchar(team) > 1,
-        !grepl("\\([HAN]\\)", team),
-        !grepl("\\d{2,}\\s+[A-Z]", team)
+        nchar(team) < 50
       ) %>%
       select(team, torvik_rank, torvik_rating, torvik_adjoe, torvik_adjde) %>%
       group_by(team) %>%
