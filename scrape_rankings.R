@@ -294,7 +294,7 @@ scrape_barttorvik <- function() {
   message("Scraping BartTorvik rankings...")
   tryCatch({
     b <- ChromoteSession$new()
-    b$Page$navigate("https://barttorvik.com/")
+    b$Page$navigate("https://barttorvik.com/#")
     b$Page$loadEventFired()
     
     message("Waiting for BartTorvik table...")
@@ -320,9 +320,8 @@ scrape_barttorvik <- function() {
       return(NULL)
     }
     
-    # Determine column indices - WAB is typically around column 10-11
-    # You may need to adjust this based on the actual table structure
-    wab_col_idx <- if(ncol(torvik_table) >= 10) 10 else NA
+    # WAB is in the LAST column
+    wab_col_idx <- ncol(torvik_table)
     
     torvik_data <- data.frame(
       rank_raw = as.character(torvik_table[[1]]),
@@ -330,7 +329,7 @@ scrape_barttorvik <- function() {
       barthag_raw = as.character(torvik_table[[8]]),
       adjoe_raw = as.character(torvik_table[[6]]),
       adjde_raw = as.character(torvik_table[[7]]),
-      wab_raw = if(!is.na(wab_col_idx)) as.character(torvik_table[[wab_col_idx]]) else NA_character_,
+      wab_raw = as.character(torvik_table[[wab_col_idx]]),  # Last column
       stringsAsFactors = FALSE
     )
     
@@ -363,10 +362,12 @@ scrape_barttorvik <- function() {
         torvik_rank > 0,
         team != "",
         !is.na(team),
-        !team %in% c("Team", "TEAM", "Rk", "D-I Avg:"),
+        !team %in% c("Team", "TEAM", "Rk", "D-I Avg:", "WAB"),  # Added "WAB" to filter
         nchar(team) > 1,
         nchar(team) < 50
       ) %>%
+      # First remove the header row that contains "WAB" text
+      filter(wab_raw != "WAB") %>%
       arrange(desc(torvik_wab)) %>%
       mutate(torvik_wab_rank = row_number()) %>%  # Create WAB rank
       arrange(torvik_rank) %>%  # Restore original rank order
@@ -384,6 +385,7 @@ scrape_barttorvik <- function() {
     return(NULL)
   })
 }
+
 # ==========================================
 # MAIN EXECUTION
 # ==========================================
