@@ -320,12 +320,17 @@ scrape_barttorvik <- function() {
       return(NULL)
     }
     
+    # Determine column indices - WAB is typically around column 10-11
+    # You may need to adjust this based on the actual table structure
+    wab_col_idx <- if(ncol(torvik_table) >= 10) 10 else NA
+    
     torvik_data <- data.frame(
       rank_raw = as.character(torvik_table[[1]]),
       team_raw = as.character(torvik_table[[2]]),
       barthag_raw = as.character(torvik_table[[8]]),
       adjoe_raw = as.character(torvik_table[[6]]),
       adjde_raw = as.character(torvik_table[[7]]),
+      wab_raw = if(!is.na(wab_col_idx)) as.character(torvik_table[[wab_col_idx]]) else NA_character_,
       stringsAsFactors = FALSE
     )
     
@@ -350,7 +355,8 @@ scrape_barttorvik <- function() {
         # Extract numeric values
         torvik_rating = suppressWarnings(as.numeric(barthag_raw)),
         torvik_adjoe = suppressWarnings(as.numeric(adjoe_raw)),
-        torvik_adjde = suppressWarnings(as.numeric(adjde_raw))
+        torvik_adjde = suppressWarnings(as.numeric(adjde_raw)),
+        torvik_wab = suppressWarnings(as.numeric(wab_raw))
       ) %>%
       filter(
         !is.na(torvik_rank),
@@ -361,12 +367,16 @@ scrape_barttorvik <- function() {
         nchar(team) > 1,
         nchar(team) < 50
       ) %>%
-      select(team, torvik_rank, torvik_rating, torvik_adjoe, torvik_adjde) %>%
+      arrange(desc(torvik_wab)) %>%
+      mutate(torvik_wab_rank = row_number()) %>%  # Create WAB rank
+      arrange(torvik_rank) %>%  # Restore original rank order
+      select(team, torvik_rank, torvik_rating, torvik_adjoe, torvik_adjde, torvik_wab, torvik_wab_rank) %>%
       group_by(team) %>%
       slice(1) %>%
       ungroup()
     
     message("Successfully scraped BartTorvik: ", nrow(torvik_data), " teams")
+    message("WAB data captured: ", sum(!is.na(torvik_data$torvik_wab)), " teams with WAB values")
     return(torvik_data)
     
   }, error = function(e) {
@@ -374,7 +384,6 @@ scrape_barttorvik <- function() {
     return(NULL)
   })
 }
-
 # ==========================================
 # MAIN EXECUTION
 # ==========================================
