@@ -386,6 +386,66 @@ scrape_barttorvik <- function() {
   })
 }
 
+scrape_kenpom <- function() {
+  message("Scraping KenPom rankings...")
+  tryCatch({
+    url <- "https://kenpom.com/"
+    page <- read_html(url)
+    table <- page %>% html_node("table#ratings-table") %>% html_table(fill = TRUE)
+    
+    n_cols <- ncol(table)
+    col_names <- character(n_cols)
+    
+    if (n_cols >= 9) {
+      col_names[1:9] <- c("rank", "team", "conference", "record", "adjem",
+                          "adjoe", "adjde", "adjt", "luck")
+    }
+    
+    for (i in 1:n_cols) {
+      if (col_names[i] == "" || is.na(col_names[i])) {
+        col_names[i] <- paste0("col_", i)
+      }
+    }
+    
+    colnames(table) <- col_names
+    
+    table <- table %>%
+      mutate(kenpom_rank = as.integer(gsub("[^0-9]", "", rank))) %>%
+      filter(!is.na(kenpom_rank), team != "Team", team != "") %>%
+      mutate(team = trimws(gsub("\\s*\\d+$", "", team)))
+    
+    if ("record" %in% colnames(table)) {
+      table <- table %>%
+        mutate(
+          kenpom_record = record,
+          kenpom_wins = as.integer(gsub("(\\d+)-(\\d+)", "\\1", record)),
+          kenpom_losses = as.integer(gsub("(\\d+)-(\\d+)", "\\2", record))
+        )
+    }
+    
+    metric_cols <- c("adjem", "adjoe", "adjde", "adjt", "luck")
+    for (col in metric_cols) {
+      if (col %in% colnames(table)) {
+        table[[col]] <- suppressWarnings(as.numeric(gsub("[^0-9.-]", "", table[[col]])))
+      }
+    }
+    
+    kenpom_data <- table %>%
+      select(any_of(c("kenpom_rank", "team", "conference", "record", 
+                      "adjem", "adjoe", "adjde", "adjt", "luck"))) %>%
+      group_by(team) %>%
+      slice(1) %>%
+      ungroup()
+    
+    message("Successfully scraped KenPom: ", nrow(kenpom_data), " teams")
+    return(kenpom_data)
+    
+  }, error = function(e) {
+    message("Error scraping KenPom: ", e$message)
+    return(NULL)
+  })
+}
+
 # ==========================================
 # MAIN EXECUTION
 # ==========================================
@@ -413,12 +473,20 @@ if (!is.null(torvik_data)) {
   message("Saved BartTorvik data: ", nrow(torvik_data), " teams")
 }
 
+# Scrape KenPom - NEW
+kenpom_data <- scrape_kenpom()
+if (!is.null(kenpom_data)) {
+  write_csv(kenpom_data, "data/kenpom_rankings.csv")
+  message("Saved KenPom data: ", nrow(kenpom_data), " teams")
+}
+
 # Create metadata file with timestamp
 metadata <- data.frame(
   last_updated = Sys.time(),
   bpi_teams = ifelse(!is.null(bpi_data), nrow(bpi_data), 0),
   kpi_teams = ifelse(!is.null(kpi_data), nrow(kpi_data), 0),
-  barttorvik_teams = ifelse(!is.null(torvik_data), nrow(torvik_data), 0)
+  barttorvik_teams = ifelse(!is.null(torvik_data), nrow(torvik_data), 0),
+  kenpom_teams = ifelse(!is.null(kenpom_data), nrow(kenpom_data), 0)  # NEW
 )
 write_csv(metadata, "data/metadata.csv")
 
