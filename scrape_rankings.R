@@ -473,21 +473,112 @@ if (!is.null(torvik_data)) {
   message("Saved BartTorvik data: ", nrow(torvik_data), " teams")
 }
 
-# Scrape KenPom - NEW
-kenpom_data <- scrape_kenpom()
-if (!is.null(kenpom_data)) {
-  write_csv(kenpom_data, "data/kenpom_rankings.csv")
-  message("Saved KenPom data: ", nrow(kenpom_data), " teams")
+scrape_kenpom <- function() {
+  message("Scraping KenPom rankings...")
+  
+  # Random delay to look more human
+  Sys.sleep(runif(1, 2, 5))
+  
+  tryCatch({
+    # Rotate user agents
+    user_agents <- c(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    )
+    
+    selected_ua <- sample(user_agents, 1)
+    
+    response <- httr::GET(
+      "https://kenpom.com/",
+      httr::user_agent(selected_ua),
+      httr::add_headers(
+        "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language" = "en-US,en;q=0.9",
+        "Accept-Encoding" = "gzip, deflate, br",
+        "DNT" = "1",
+        "Connection" = "keep-alive",
+        "Upgrade-Insecure-Requests" = "1",
+        "Sec-Fetch-Dest" = "document",
+        "Sec-Fetch-Mode" = "navigate",
+        "Sec-Fetch-Site" = "none",
+        "Cache-Control" = "max-age=0"
+      ),
+      httr::timeout(60)
+    )
+    
+    if (httr::status_code(response) != 200) {
+      message("KenPom returned status code: ", httr::status_code(response))
+      return(NULL)
+    }
+    
+    Sys.sleep(1)  # Brief pause after request
+    
+    page <- httr::content(response, as = "text", encoding = "UTF-8")
+    page <- read_html(page)
+    
+    table <- page %>% html_node("table#ratings-table") %>% html_table(fill = TRUE)
+    
+    if (is.null(table) || nrow(table) == 0) {
+      message("No KenPom table found")
+      return(NULL)
+    }
+    
+    n_cols <- ncol(table)
+    col_names <- character(n_cols)
+    
+    if (n_cols >= 9) {
+      col_names[1:9] <- c("rank", "team", "conference", "record", "adjem",
+                          "adjoe", "adjde", "adjt", "luck")
+    }
+    
+    for (i in 1:n_cols) {
+      if (col_names[i] == "" || is.na(col_names[i])) {
+        col_names[i] <- paste0("col_", i)
+      }
+    }
+    
+    colnames(table) <- col_names
+    
+    table <- table %>%
+      mutate(kenpom_rank = as.integer(gsub("[^0-9]", "", rank))) %>%
+      filter(!is.na(kenpom_rank), team != "Team", team != "") %>%
+      mutate(team = trimws(gsub("\\s*\\d+$", "", team)))
+    
+    if ("record" %in% colnames(table)) {
+      table <- table %>%
+        mutate(
+          kenpom_record = record,
+          kenpom_wins = as.integer(gsub("(\\d+)-(\\d+)", "\\1", record)),
+          kenpom_losses = as.integer(gsub("(\\d+)-(\\d+)", "\\2", record))
+        )
+    }
+    
+    metric_cols <- c("adjem", "adjoe", "adjde", "adjt", "luck")
+    for (col in metric_cols) {
+      if (col %in% colnames(table)) {
+        table[[col]] <- suppressWarnings(as.numeric(gsub("[^0-9.-]", "", table[[col]])))
+      }
+    }
+    
+    kenpom_data <- table %>%
+      select(any_of(c("kenpom_rank", "team", "conference", "record", 
+                      "adjem", "adjoe", "adjde", "adjt", "luck"))) %>%
+      group_by(team) %>%
+      slice(1) %>%
+      ungroup()
+    
+    if (nrow(kenpom_data) < 100) {
+      message("Warning: Only found ", nrow(kenpom_data), " teams, expected 300+")
+      return(NULL)
+    }
+    
+    message("Successfully scraped KenPom: ", nrow(kenpom_data), " teams")
+    return(kenpom_data)
+    
+  }, error = function(e) {
+    message("Error scraping KenPom: ", e$message)
+    message("This may be due to rate limiting or bot detection")
+    return(NULL)
+  })
 }
-
-# Create metadata file with timestamp
-metadata <- data.frame(
-  last_updated = Sys.time(),
-  bpi_teams = ifelse(!is.null(bpi_data), nrow(bpi_data), 0),
-  kpi_teams = ifelse(!is.null(kpi_data), nrow(kpi_data), 0),
-  barttorvik_teams = ifelse(!is.null(torvik_data), nrow(torvik_data), 0),
-  kenpom_teams = ifelse(!is.null(kenpom_data), nrow(kenpom_data), 0)  # NEW
-)
-write_csv(metadata, "data/metadata.csv")
-
-message("Scraping job completed at ", Sys.time())
