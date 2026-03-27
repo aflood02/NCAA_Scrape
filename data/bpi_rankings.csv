@@ -1,7 +1,7 @@
 team,bpi_rank,bpi_rating
 Abilene Christian,275,NA
 Air Force,355,NA
-Akron,81,NA
+Akron,82,NA
 Alabama,15,NA
 Alabama A&M,331,NA
 Alabama State,326,NA
@@ -14,7 +14,7 @@ Arkansas,19,NA
 Arkansas State,136,NA
 Arkansas-Pine Bluff,332,NA
 Army,341,NA
-Auburn,31,NA
+Auburn,32,NA
 Austin Peay,167,NA
 BYU,20,12
 Ball State,272,NA
@@ -50,7 +50,7 @@ Charlotte,187,NA
 Chattanooga,258,NA
 Chicago State,347,NA
 Cincinnati,43,12
-Clemson,32,NA
+Clemson,33,NA
 Cleveland State,315,NA
 Coastal Carolina,245,NA
 Colgate,225,NA
@@ -88,13 +88,13 @@ Florida A&M,322,NA
 Florida Atlantic,119,NA
 Florida Gulf Coast,214,NA
 Florida International,210,NA
-Florida State,71,NA
-Fordham,165,-10
+Florida State,72,NA
+Fordham,164,-10
 Fresno State,155,NA
 Furman,158,NA
 Gardner-Webb,364,NA
 George Mason,90,-10
-George Washington,82,-10
+George Washington,81,-10
 Georgetown,73,NA
 Georgia,38,NA
 Georgia Southern,219,NA
@@ -172,8 +172,8 @@ Michigan,3,NA
 Michigan State,14,NA
 Middle Tennessee,157,NA
 Milwaukee,244,NA
-Minnesota,72,NA
-Mississippi State,79,NA
+Minnesota,71,NA
+Mississippi State,78,NA
 Mississippi Valley State,366,NA
 Missouri,46,NA
 Missouri State,202,NA
@@ -192,8 +192,8 @@ Nevada,77,NA
 New Hampshire,342,NA
 New Haven,324,NA
 New Mexico,52,NA
-New Mexico State,164,NA
-New Orleans,237,NA
+New Mexico State,165,NA
+New Orleans,238,NA
 Niagara,346,NA
 Nicholls,234,NA
 Norfolk State,276,NA
@@ -256,8 +256,8 @@ Saint Bonaventure,125,-10
 Saint Francis,348,NA
 Saint Johns,16,NA
 Saint Josephs,115,-10
-Saint Louis,33,-10
-Saint Marys,30,NA
+Saint Louis,34,-10
+Saint Marys,31,NA
 Saint Peters,247,NA
 Saint Thomas-Minnesota,135,NA
 Sam Houston,116,NA
@@ -273,7 +273,7 @@ Siena,184,NA
 South Alabama,191,NA
 South Carolina,94,NA
 South Carolina State,360,NA
-South Carolina Upstate,296,NA
+South Carolina Upstate,297,NA
 South Dakota,309,NA
 South Dakota State,209,NA
 South Florida,51,NA
@@ -288,14 +288,14 @@ Stephen F. Austin,114,NA
 Stetson,334,NA
 Stonehill,327,NA
 Stony Brook,253,NA
-Syracuse,78,NA
+Syracuse,79,NA
 TCU,48,12
 Tarleton State,270,NA
 Temple,131,NA
 Tennessee,12,NA
 Tennessee State,207,NA
 Tennessee Tech,320,NA
-Texas,34,NA
+Texas,30,NA
 Texas A&M,36,NA
 Texas A&M-Corpus Christi,180,NA
 Texas Southern,311,NA
@@ -313,7 +313,7 @@ UC Davis,206,NA
 UC Irvine,113,NA
 UC Riverside,282,NA
 UC San Diego,143,NA
-UC Santa Barbara,148,NA
+UC Santa Barbara,147,NA
 UCF,58,12
 UCLA,27,NA
 UConn,11,NA
@@ -333,7 +333,7 @@ UTEP,263,NA
 UTSA,318,NA
 Utah,108,12
 Utah State,29,NA
-Utah Tech,238,NA
+Utah Tech,237,NA
 Utah Valley,112,NA
 VCU,47,-10
 VMI Keydets,356,NA
@@ -353,10 +353,10 @@ West Virginia,49,12
 Western Carolina,211,NA
 Western Illinois,363,NA
 Western Kentucky,151,NA
-Western Michigan,297,NA
+Western Michigan,296,NA
 Wichita State,83,NA
 William & Mary,154,NA
-Winthrop,147,NA
+Winthrop,148,NA
 Wisconsin,25,NA
 Wofford,243,NA
 Wright State,137,NA
