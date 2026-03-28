@@ -7,7 +7,7 @@ Alabama A&M,331,NA
 Alabama State,326,NA
 Alcorn State,357,NA
 American University,220,NA
-App State,161,NA
+App State,162,NA
 Arizona,4,12
 Arizona State,92,12
 Arkansas,19,NA
@@ -55,7 +55,7 @@ Cleveland State,315,NA
 Coastal Carolina,245,NA
 Colgate,225,NA
 Colorado,93,12
-Colorado State,87,NA
+Colorado State,88,NA
 Columbia,192,NA
 Coppin State,365,NA
 Cornell,146,NA
@@ -116,14 +116,14 @@ Howard,203,NA
 IU Indianapolis,316,NA
 Idaho,176,NA
 Idaho State,301,NA
-Illinois,8,NA
+Illinois,7,NA
 Illinois State,98,NA
 Incarnate Word,248,NA
 Indiana,37,NA
 Indiana State,216,NA
 Iona,232,NA
 Iowa,26,NA
-Iowa State,7,12
+Iowa State,8,12
 Jackson State,351,NA
 Jacksonville,267,NA
 Jacksonville State,174,NA
@@ -163,7 +163,7 @@ Maryland Eastern Shore,345,NA
 Massachusetts,160,NA
 McNeese,61,NA
 Memphis,103,NA
-Mercer,162,NA
+Mercer,161,NA
 Mercyhurst,284,NA
 Merrimack,190,NA
 Miami,39,NA
@@ -223,10 +223,10 @@ Old Dominion,227,NA
 Ole Miss,54,NA
 Omaha,277,NA
 Oral Roberts,321,NA
-Oregon,88,NA
+Oregon,87,NA
 Oregon State,172,NA
 Pacific,132,NA
-Penn State,129,NA
+Penn State,128,NA
 Pennsylvania,168,NA
 Pepperdine,288,NA
 Pittsburgh,95,NA
@@ -279,7 +279,7 @@ South Dakota State,209,NA
 South Florida,51,NA
 Southeast Missouri State,251,NA
 Southern,265,NA
-Southern Illinois,128,NA
+Southern Illinois,129,NA
 Southern Indiana,344,NA
 Southern Miss,233,NA
 Southern Utah,293,NA
@@ -292,7 +292,7 @@ Syracuse,79,NA
 TCU,48,12
 Tarleton State,270,NA
 Temple,131,NA
-Tennessee,12,NA
+Tennessee,11,NA
 Tennessee State,207,NA
 Tennessee Tech,320,NA
 Texas,30,NA
@@ -300,7 +300,7 @@ Texas A&M,36,NA
 Texas A&M-Corpus Christi,180,NA
 Texas Southern,311,NA
 Texas State,212,NA
-Texas Tech,21,12
+Texas Tech,22,12
 The Citadel,353,NA
 Toledo,153,NA
 Towson,150,NA
@@ -316,7 +316,7 @@ UC San Diego,143,NA
 UC Santa Barbara,147,NA
 UCF,58,12
 UCLA,27,NA
-UConn,11,NA
+UConn,12,NA
 UIC,121,NA
 UL Monroe,354,NA
 UMBC,182,NA
@@ -341,7 +341,7 @@ Valparaiso,178,NA
 Vanderbilt,17,NA
 Vermont,208,NA
 Villanova,41,NA
-Virginia,22,NA
+Virginia,21,NA
 Virginia Tech,69,NA
 Wagner,325,NA
 Wake Forest,65,NA
