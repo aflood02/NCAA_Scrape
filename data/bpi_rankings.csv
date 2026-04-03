@@ -14,17 +14,17 @@ Arkansas,19,NA
 Arkansas State,136,NA
 Arkansas-Pine Bluff,332,NA
 Army,341,NA
-Auburn,32,NA
+Auburn,29,NA
 Austin Peay,167,NA
 BYU,20,12
 Ball State,271,NA
 Baylor,43,12
 Bellarmine,294,NA
 Belmont,97,NA
-Bethune-Cookman,249,NA
+Bethune-Cookman,248,NA
 Binghamton,358,NA
 Boise State,75,NA
-Boston College,156,NA
+Boston College,155,NA
 Boston University,239,NA
 Bowling Green,145,NA
 Bradley,122,NA
@@ -32,7 +32,7 @@ Brown,262,NA
 Bryant,350,NA
 Bucknell,338,NA
 Buffalo,227,NA
-Butler,66,NA
+Butler,67,NA
 Cal Poly,268,NA
 Cal State Bakersfield,330,NA
 Cal State Fullerton,224,NA
@@ -46,29 +46,29 @@ Central Connecticut,286,NA
 Central Michigan,285,NA
 Charleston,173,NA
 Charleston Southern,250,NA
-Charlotte,187,NA
+Charlotte,186,NA
 Chattanooga,258,NA
-Chicago State,347,NA
+Chicago State,348,NA
 Cincinnati,44,12
 Clemson,33,NA
 Cleveland State,315,NA
 Coastal Carolina,245,NA
 Colgate,225,NA
 Colorado,93,12
-Colorado State,87,NA
+Colorado State,88,NA
 Columbia,192,NA
 Coppin State,365,NA
 Cornell,146,NA
-Creighton,64,NA
+Creighton,63,NA
 Dartmouth,261,NA
 Davidson,109,-10
-Dayton,63,-10
+Dayton,64,-10
 DePaul,101,NA
 Delaware,289,NA
 Delaware State,362,NA
 Denver,269,NA
 Detroit Mercy,257,NA
-Drake,186,NA
+Drake,187,NA
 Drexel,215,NA
 Duke,2,NA
 Duquesne,130,-10
@@ -90,7 +90,7 @@ Florida Gulf Coast,214,NA
 Florida International,210,NA
 Florida State,72,NA
 Fordham,165,-10
-Fresno State,155,NA
+Fresno State,156,NA
 Furman,158,NA
 Gardner-Webb,364,NA
 George Mason,90,-10
@@ -104,7 +104,7 @@ Gonzaga,10,NA
 Grambling,298,NA
 Grand Canyon,70,NA
 Green Bay,246,NA
-Hampton,264,NA
+Hampton,265,NA
 Harvard,170,NA
 Hawaii,123,NA
 High Point,62,NA
@@ -117,8 +117,8 @@ IU Indianapolis,316,NA
 Idaho,176,NA
 Idaho State,301,NA
 Illinois,7,NA
-Illinois State,98,NA
-Incarnate Word,248,NA
+Illinois State,99,NA
+Incarnate Word,249,NA
 Indiana,37,NA
 Indiana State,217,NA
 Iona,232,NA
@@ -158,7 +158,7 @@ Manhattan,323,NA
 Marist,201,NA
 Marquette,73,NA
 Marshall,175,NA
-Maryland,99,NA
+Maryland,98,NA
 Maryland Eastern Shore,345,NA
 Massachusetts,160,NA
 McNeese,61,NA
@@ -172,10 +172,10 @@ Michigan,3,NA
 Michigan State,14,NA
 Middle Tennessee,157,NA
 Milwaukee,244,NA
-Minnesota,78,NA
+Minnesota,79,NA
 Mississippi State,77,NA
 Mississippi Valley State,366,NA
-Missouri,47,NA
+Missouri,46,NA
 Missouri State,202,NA
 Monmouth,179,NA
 Montana,222,NA
@@ -191,7 +191,7 @@ Nebraska,18,NA
 Nevada,76,NA
 New Hampshire,342,NA
 New Haven,324,NA
-New Mexico,52,NA
+New Mexico,54,NA
 New Mexico State,164,NA
 New Orleans,238,NA
 Niagara,346,NA
@@ -211,7 +211,7 @@ Northern Colorado,163,NA
 Northern Illinois,336,NA
 Northern Iowa,85,NA
 Northern Kentucky,183,NA
-Northwestern,59,NA
+Northwestern,60,NA
 Northwestern State,290,NA
 Notre Dame,89,NA
 Oakland,169,NA
@@ -220,22 +220,22 @@ Ohio State,28,NA
 Oklahoma,42,NA
 Oklahoma State,84,12
 Old Dominion,226,NA
-Ole Miss,54,NA
+Ole Miss,53,NA
 Omaha,277,NA
-Oral Roberts,321,NA
-Oregon,88,NA
+Oral Roberts,320,NA
+Oregon,87,NA
 Oregon State,172,NA
 Pacific,132,NA
-Penn State,129,NA
+Penn State,128,NA
 Pennsylvania,168,NA
 Pepperdine,288,NA
 Pittsburgh,95,NA
 Portland,273,NA
-Portland State,196,NA
+Portland State,195,NA
 Prairie View A&M,302,NA
 Presbyterian,266,NA
 Princeton,259,NA
-Providence,60,NA
+Providence,59,NA
 Purdue,9,NA
 Purdue Fort Wayne,242,NA
 Queens University,200,NA
@@ -246,18 +246,18 @@ Rice,197,NA
 Richmond,139,-10
 Rider Broncs,359,NA
 Robert Morris,171,NA
-Rutgers,110,NA
-SE Louisiana,283,NA
+Rutgers,111,NA
+SE Louisiana,282,NA
 SIU Edwardsville,256,NA
 SMU,45,NA
 Sacramento State,304,NA
 Sacred Heart,281,NA
 Saint Bonaventure,125,-10
-Saint Francis,348,NA
+Saint Francis,347,NA
 Saint Johns,16,NA
 Saint Josephs,115,-10
 Saint Louis,34,-10
-Saint Marys,31,NA
+Saint Marys,32,NA
 Saint Peters,247,NA
 Saint Thomas-Minnesota,135,NA
 Sam Houston,116,NA
@@ -278,8 +278,8 @@ South Dakota,309,NA
 South Dakota State,209,NA
 South Florida,51,NA
 Southeast Missouri State,251,NA
-Southern,265,NA
-Southern Illinois,128,NA
+Southern,264,NA
+Southern Illinois,129,NA
 Southern Indiana,344,NA
 Southern Miss,233,NA
 Southern Utah,293,NA
@@ -288,14 +288,14 @@ Stephen F. Austin,114,NA
 Stetson,334,NA
 Stonehill,327,NA
 Stony Brook,253,NA
-Syracuse,79,NA
+Syracuse,78,NA
 TCU,48,12
 Tarleton State,270,NA
 Temple,131,NA
 Tennessee,12,NA
 Tennessee State,207,NA
-Tennessee Tech,320,NA
-Texas,30,NA
+Tennessee Tech,321,NA
+Texas,31,NA
 Texas A&M,36,NA
 Texas A&M-Corpus Christi,180,NA
 Texas Southern,311,NA
@@ -306,12 +306,12 @@ Toledo,153,NA
 Towson,150,NA
 Troy,138,NA
 Tulane,194,NA
-Tulsa,68,NA
+Tulsa,66,NA
 UAB,106,NA
 UAlbany,299,NA
 UC Davis,206,NA
 UC Irvine,113,NA
-UC Riverside,282,NA
+UC Riverside,283,NA
 UC San Diego,143,NA
 UC Santa Barbara,147,NA
 UCF,58,12
@@ -323,19 +323,19 @@ UMBC,182,NA
 UMass Lowell,307,NA
 UNC Asheville,235,NA
 UNC Greensboro,274,NA
-UNC Wilmington,111,NA
+UNC Wilmington,110,NA
 UNLV,105,NA
-USC,67,NA
-UT Arlington,195,NA
+USC,68,NA
+UT Arlington,196,NA
 UT Martin,229,NA
 UT Rio Grande Valley,141,NA
 UTEP,263,NA
 UTSA,318,NA
 Utah,108,12
-Utah State,29,NA
+Utah State,30,NA
 Utah Tech,237,NA
 Utah Valley,112,NA
-VCU,46,-10
+VCU,47,-10
 VMI Keydets,356,NA
 Valparaiso,178,NA
 Vanderbilt,17,NA
@@ -345,7 +345,7 @@ Virginia,22,NA
 Virginia Tech,69,NA
 Wagner,325,NA
 Wake Forest,65,NA
-Washington,53,NA
+Washington,52,NA
 Washington State,166,NA
 Weber State,213,NA
 West Georgia,319,NA
