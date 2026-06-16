@@ -1,201 +1,366 @@
 team,bpi_rank,bpi_rating
+Abilene Christian,275,NA
+Air Force,355,NA
 Akron,82,NA
 Alabama,15,NA
+Alabama A&M,331,NA
+Alabama State,326,NA
+Alcorn State,357,NA
+American University,220,NA
 App State,161,NA
 Arizona,4,12
 Arizona State,92,12
 Arkansas,19,NA
 Arkansas State,136,NA
+Arkansas-Pine Bluff,332,NA
+Army,341,NA
 Auburn,29,NA
 Austin Peay,167,NA
 BYU,20,12
+Ball State,271,NA
 Baylor,44,12
+Bellarmine,294,NA
 Belmont,97,NA
+Bethune-Cookman,249,NA
+Binghamton,358,NA
 Boise State,75,NA
 Boston College,155,NA
+Boston University,239,NA
 Bowling Green,145,NA
 Bradley,122,NA
+Brown,262,NA
+Bryant,349,NA
+Bucknell,338,NA
+Buffalo,227,NA
 Butler,67,NA
+Cal Poly,268,NA
+Cal State Bakersfield,330,NA
+Cal State Fullerton,224,NA
 Cal State Northridge,198,NA
 California,80,NA
 California Baptist,134,NA
 Campbell,185,NA
+Canisius,350,NA
 Central Arkansas,193,NA
+Central Connecticut,286,NA
+Central Michigan,285,NA
 Charleston,173,NA
+Charleston Southern,250,NA
 Charlotte,186,NA
+Chattanooga,258,NA
+Chicago State,348,NA
 Cincinnati,43,12
 Clemson,33,NA
+Cleveland State,315,NA
+Coastal Carolina,245,NA
+Colgate,225,NA
 Colorado,93,12
 Colorado State,88,NA
 Columbia,192,NA
+Coppin State,365,NA
 Cornell,146,NA
 Creighton,66,NA
+Dartmouth,261,NA
 Davidson,109,-10
 Dayton,63,-10
 DePaul,101,NA
+Delaware,289,NA
+Delaware State,362,NA
+Denver,269,NA
+Detroit Mercy,257,NA
 Drake,187,NA
+Drexel,215,NA
 Duke,2,NA
 Duquesne,130,-10
+East Carolina,255,NA
 East Tennessee State,144,NA
+East Texas A&M,305,NA
+Eastern Illinois,328,NA
+Eastern Kentucky,272,NA
+Eastern Michigan,254,NA
+Eastern Washington,216,NA
+Elon,231,NA
+Evansville,308,NA
+Fairfield,252,NA
+Fairleigh Dickinson,329,NA
 Florida,6,NA
+Florida A&M,322,NA
 Florida Atlantic,119,NA
+Florida Gulf Coast,214,NA
+Florida International,210,NA
 Florida State,72,NA
 Fordham,164,-10
 Fresno State,156,NA
 Furman,158,NA
+Gardner-Webb,364,NA
 George Mason,90,-10
 George Washington,81,-10
 Georgetown,71,NA
 Georgia,38,NA
+Georgia Southern,219,NA
+Georgia State,295,NA
 Georgia Tech,140,NA
 Gonzaga,10,NA
+Grambling,298,NA
 Grand Canyon,70,NA
+Green Bay,246,NA
+Hampton,264,NA
 Harvard,170,NA
 Hawaii,123,NA
 High Point,62,NA
 Hofstra,104,NA
+Holy Cross,335,NA
 Houston,5,12
+Houston Christian,314,NA
+Howard,203,NA
+IU Indianapolis,316,NA
 Idaho,176,NA
+Idaho State,301,NA
 Illinois,7,NA
 Illinois State,99,NA
+Incarnate Word,248,NA
 Indiana,37,NA
+Indiana State,217,NA
+Iona,232,NA
 Iowa,26,NA
 Iowa State,8,12
+Jackson State,351,NA
+Jacksonville,267,NA
 Jacksonville State,174,NA
 James Madison,188,NA
 Kansas,23,12
+Kansas City,361,NA
 Kansas State,86,12
 Kennesaw State,124,NA
 Kent State,152,NA
 Kentucky,24,NA
 LSU,56,NA
+La Salle,223,-10
+Lafayette,312,NA
+Lamar,240,NA
+Le Moyne,300,NA
+Lehigh,292,NA
 Liberty,102,NA
+Lindenwood,260,NA
 Lipscomb,177,NA
+Little Rock,306,NA
+Long Beach State,279,NA
+Long Island University,221,NA
+Longwood,228,NA
+Louisiana,310,NA
 Louisiana Tech,181,NA
 Louisville,13,NA
+Loyola Chicago,241,-10
+Loyola Maryland,313,NA
 Loyola Marymount,149,NA
+Maine,333,NA
+Manhattan,323,NA
 Marist,201,NA
 Marquette,73,NA
 Marshall,175,NA
 Maryland,98,NA
+Maryland Eastern Shore,345,NA
 Massachusetts,160,NA
 McNeese,61,NA
 Memphis,103,NA
 Mercer,162,NA
+Mercyhurst,284,NA
 Merrimack,190,NA
 Miami,40,NA
 Miami OH,91,NA
 Michigan,3,NA
 Michigan State,14,NA
 Middle Tennessee,157,NA
+Milwaukee,244,NA
 Minnesota,79,NA
 Mississippi State,77,NA
+Mississippi Valley State,366,NA
 Missouri,46,NA
+Missouri State,202,NA
 Monmouth,179,NA
+Montana,222,NA
 Montana State,159,NA
+Morehead State,291,NA
+Morgan State,352,NA
+Mount Saint Marys,278,NA
 Murray State,127,NA
 NC State,42,NA
+NJIT,340,NA
 Navy,142,NA
 Nebraska,18,NA
 Nevada,76,NA
+New Hampshire,342,NA
+New Haven,324,NA
 New Mexico,54,NA
 New Mexico State,163,NA
+New Orleans,237,NA
+Niagara,346,NA
+Nicholls,234,NA
+Norfolk State,276,NA
+North Alabama,339,NA
 North Carolina,35,NA
+North Carolina A&T,303,NA
+North Carolina Central,343,NA
+North Dakota,287,NA
 North Dakota State,133,NA
+North Florida,337,NA
 North Texas,120,NA
+Northeastern,280,NA
+Northern Arizona,318,NA
 Northern Colorado,165,NA
+Northern Illinois,336,NA
 Northern Iowa,85,NA
 Northern Kentucky,183,NA
 Northwestern,59,NA
+Northwestern State,290,NA
 Notre Dame,89,NA
 Oakland,169,NA
+Ohio,204,NA
 Ohio State,28,NA
 Oklahoma,39,NA
 Oklahoma State,84,12
+Old Dominion,226,NA
 Ole Miss,53,NA
+Omaha,277,NA
+Oral Roberts,320,NA
 Oregon,87,NA
 Oregon State,172,NA
 Pacific,132,NA
 Penn State,128,NA
 Pennsylvania,168,NA
+Pepperdine,288,NA
 Pittsburgh,95,NA
+Portland,273,NA
 Portland State,195,NA
+Prairie View A&M,302,NA
+Presbyterian,266,NA
+Princeton,259,NA
 Providence,60,NA
 Purdue,9,NA
+Purdue Fort Wayne,242,NA
 Queens University,200,NA
 Quinnipiac,199,NA
+Radford,218,NA
 Rhode Island,117,-10
 Rice,197,NA
 Richmond,139,-10
+Rider Broncs,359,NA
 Robert Morris,171,NA
 Rutgers,111,NA
+SE Louisiana,282,NA
+SIU Edwardsville,256,NA
 SMU,45,NA
+Sacramento State,304,NA
+Sacred Heart,281,NA
 Saint Bonaventure,125,-10
+Saint Francis,347,NA
 Saint Johns,16,NA
 Saint Josephs,115,-10
 Saint Louis,34,-10
 Saint Marys,32,NA
+Saint Peters,247,NA
 Saint Thomas-Minnesota,135,NA
 Sam Houston,116,NA
 Samford,189,NA
+San Diego,236,NA
 San Diego State,57,NA
 San Francisco,107,NA
+San Jose State,230,NA
 Santa Clara,50,NA
 Seattle U,126,NA
 Seton Hall,55,NA
 Siena,184,NA
 South Alabama,191,NA
 South Carolina,94,NA
+South Carolina State,360,NA
+South Carolina Upstate,297,NA
+South Dakota,309,NA
+South Dakota State,209,NA
 South Florida,51,NA
+Southeast Missouri State,251,NA
+Southern,265,NA
 Southern Illinois,129,NA
+Southern Indiana,344,NA
+Southern Miss,233,NA
+Southern Utah,293,NA
 Stanford,74,NA
 Stephen F. Austin,114,NA
+Stetson,334,NA
+Stonehill,327,NA
+Stony Brook,253,NA
 Syracuse,78,NA
 TCU,49,12
+Tarleton State,270,NA
 Temple,131,NA
 Tennessee,12,NA
+Tennessee State,207,NA
+Tennessee Tech,321,NA
 Texas,31,NA
 Texas A&M,36,NA
 Texas A&M-Corpus Christi,180,NA
+Texas Southern,311,NA
+Texas State,212,NA
 Texas Tech,22,12
+The Citadel,353,NA
 Toledo,153,NA
 Towson,150,NA
 Troy,138,NA
 Tulane,194,NA
 Tulsa,65,NA
 UAB,106,NA
+UAlbany,299,NA
+UC Davis,206,NA
 UC Irvine,113,NA
+UC Riverside,283,NA
 UC San Diego,143,NA
 UC Santa Barbara,147,NA
 UCF,58,12
 UCLA,27,NA
 UConn,11,NA
 UIC,121,NA
+UL Monroe,354,NA
 UMBC,182,NA
+UMass Lowell,307,NA
+UNC Asheville,235,NA
+UNC Greensboro,274,NA
 UNC Wilmington,110,NA
 UNLV,105,NA
 USC,68,NA
 UT Arlington,196,NA
+UT Martin,229,NA
 UT Rio Grande Valley,141,NA
+UTEP,263,NA
+UTSA,317,NA
 Utah,108,12
 Utah State,30,NA
+Utah Tech,238,NA
 Utah Valley,112,NA
 VCU,47,-10
+VMI Keydets,356,NA
 Valparaiso,178,NA
 Vanderbilt,17,NA
+Vermont,208,NA
 Villanova,41,NA
 Virginia,21,NA
 Virginia Tech,69,NA
+Wagner,325,NA
 Wake Forest,64,NA
 Washington,52,NA
 Washington State,166,NA
+Weber State,213,NA
+West Georgia,319,NA
 West Virginia,48,12
+Western Carolina,211,NA
+Western Illinois,363,NA
 Western Kentucky,151,NA
+Western Michigan,296,NA
 Wichita State,83,NA
 William & Mary,154,NA
 Winthrop,148,NA
 Wisconsin,25,NA
+Wofford,243,NA
 Wright State,137,NA
 Wyoming,118,NA
 Xavier,96,NA
 Yale,100,NA
+Youngstown State,205,NA
