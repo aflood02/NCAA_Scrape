@@ -61,8 +61,8 @@ Coppin State,355,NA
 Cornell,186,NA
 Creighton,43,NA
 Dartmouth,261,NA
-Davidson,122,-10
-Dayton,102,-10
+Davidson,122,10
+Dayton,102,10
 DePaul,66,NA
 Delaware,194,NA
 Delaware State,352,NA
@@ -71,7 +71,7 @@ Detroit Mercy,353,NA
 Drake,127,NA
 Drexel,211,NA
 Duke,3,NA
-Duquesne,178,-10
+Duquesne,178,10
 East Carolina,200,NA
 East Tennessee State,146,NA
 East Texas A&M,291,NA
@@ -89,12 +89,12 @@ Florida Atlantic,169,NA
 Florida Gulf Coast,212,NA
 Florida International,180,NA
 Florida State,72,NA
-Fordham,119,-10
+Fordham,119,10
 Fresno State,270,-12
 Furman,111,NA
 Gardner-Webb,351,NA
-George Mason,99,-10
-George Washington,93,-10
+George Mason,99,10
+George Washington,93,10
 Georgetown,79,NA
 Georgia,47,NA
 Georgia Southern,272,NA
@@ -136,7 +136,7 @@ Kent State,184,NA
 Kentucky,57,NA
 LSU,63,NA
 LSU New Orleans,345,NA
-La Salle,228,-10
+La Salle,228,10
 Lafayette,319,NA
 Lamar,179,NA
 Le Moyne,292,NA
@@ -151,7 +151,7 @@ Longwood,219,NA
 Louisiana,290,NA
 Louisiana Tech,197,NA
 Louisville,36,NA
-Loyola Chicago,131,-10
+Loyola Chicago,131,10
 Loyola Maryland,347,NA
 Loyola Marymount,137,NA
 Maine,300,NA
@@ -241,9 +241,9 @@ Purdue Fort Wayne,237,NA
 Queens University,196,NA
 Quinnipiac,260,NA
 Radford,234,NA
-Rhode Island,116,-10
+Rhode Island,116,10
 Rice,202,NA
-Richmond,110,-10
+Richmond,110,10
 Rider Broncs,360,NA
 Robert Morris,208,NA
 Rutgers,73,NA
@@ -252,10 +252,10 @@ SIU Edwardsville,286,NA
 SMU,67,NA
 Sacramento State,252,NA
 Sacred Heart,275,NA
-Saint Bonaventure,135,-10
+Saint Bonaventure,135,10
 Saint Johns,20,NA
-Saint Josephs,147,-10
-Saint Louis,48,-10
+Saint Josephs,147,10
+Saint Louis,48,10
 Saint Marys,49,NA
 Saint Peters,332,NA
 Saint Thomas,150,NA
@@ -334,7 +334,7 @@ Utah,113,12
 Utah State,44,-12
 Utah Tech,231,NA
 Utah Valley,124,NA
-VCU,42,-10
+VCU,42,10
 VMI Keydets,311,NA
 Valparaiso,120,NA
 Vanderbilt,17,NA
